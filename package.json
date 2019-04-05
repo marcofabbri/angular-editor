@@ -1,8 +1,8 @@
 {
-  "name": "@kolkov/angular-editor",
+  "name": "marcofabbri-angular-editor",
   "version": "0.13.1",
   "author": "Andrey Kolkov <a.kolkov@gmail.com>",
-  "repository": "https://github.com/kolkov/angular-editor",
+  "repository": "https://github.com/marcofabbri/angular-editor",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
