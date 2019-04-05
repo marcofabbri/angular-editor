@@ -3,7 +3,7 @@
     <button type="button" title="Undo" class="angular-editor-button" (click)="triggerCommand('undo')" tabindex="-1"><i
       class='fa fa-undo'></i></button>
     <button type="button" title="Redo" class="angular-editor-button" (click)="triggerCommand('redo')" tabindex="-1"><i
-      class='fa fa-repeat'></i></button>
+      class='fa fa-redo'></i></button>
   </div>
   <div class="angular-editor-toolbar-set">
     <button [id]="'bold-'+id" type="button" title="Bold" class="angular-editor-button" (click)="triggerCommand('bold')"
@@ -92,7 +92,7 @@
     </button>
     <button type="button" class="angular-editor-button" (click)="triggerCommand('unlink')"
             title="Unlink" [disabled]="htmlMode" tabindex="-1">
-      <i class="fa fa-chain-broken"></i>
+      <i class="fa fa-unlink"></i>
     </button>
   </div>
 </div>
