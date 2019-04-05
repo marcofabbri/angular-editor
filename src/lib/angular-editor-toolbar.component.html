@@ -1,53 +1,51 @@
 <div class="angular-editor-toolbar" *ngIf="showToolbar">
   <div class="angular-editor-toolbar-set">
-    <button type="button" title="Undo" class="angular-editor-button" (click)="triggerCommand('undo')" tabindex="-1"><i
-      class='fa fa-undo'></i></button>
-    <button type="button" title="Redo" class="angular-editor-button" (click)="triggerCommand('redo')" tabindex="-1"><i
-      class='fa fa-redo'></i></button>
+    <button type="button" title="Annulla" class="angular-editor-button" (click)="triggerCommand('undo')" tabindex="-1"><i
+        class='fa fa-undo'></i></button>
+    <button type="button" title="Ripeti" class="angular-editor-button" (click)="triggerCommand('redo')" tabindex="-1"><i
+        class='fa fa-redo'></i></button>
   </div>
   <div class="angular-editor-toolbar-set">
-    <button [id]="'bold-'+id" type="button" title="Bold" class="angular-editor-button" (click)="triggerCommand('bold')"
-            [disabled]="htmlMode" tabindex="-1"><i class='fa fa-bold'></i></button>
-    <button [id]="'italic-'+id" type="button" title="Italic" class="angular-editor-button"
-            (click)="triggerCommand('italic')"
-            [disabled]="htmlMode" tabindex="-1"><i class='fa fa-italic'></i></button>
-    <button [id]="'strikeThrough-'+id" type="button" title="Strikethrough" class="angular-editor-button"
-            (click)="triggerCommand('strikeThrough')" [disabled]="htmlMode" tabindex="-1"><i class='fa fa-strikethrough'></i></button>
+    <button [id]="'bold-'+id" type="button" title="Grassetto" class="angular-editor-button" (click)="triggerCommand('bold')"
+      [disabled]="htmlMode" tabindex="-1"><i class='fa fa-bold'></i></button>
+    <button [id]="'italic-'+id" type="button" title="Corsivo" class="angular-editor-button"
+      (click)="triggerCommand('italic')" [disabled]="htmlMode" tabindex="-1"><i class='fa fa-italic'></i></button>
+    <button [id]="'strikeThrough-'+id" type="button" title="Barrato" class="angular-editor-button"
+      (click)="triggerCommand('strikeThrough')" [disabled]="htmlMode" tabindex="-1"><i
+        class='fa fa-strikethrough'></i></button>
   </div>
   <div class="angular-editor-toolbar-set">
-    <button [id]="'justifyLeft-'+id" type="button" title="Justify Left" class="angular-editor-button"
-            (click)="triggerCommand('justifyLeft')" [disabled]="htmlMode" tabindex="-1"><i
-      class='fa fa-align-left'></i></button>
-    <button [id]="'justifyCenter-'+id" type="button" title="Justify Center" class="angular-editor-button"
-            (click)="triggerCommand('justifyCenter')" [disabled]="htmlMode" tabindex="-1"><i class='fa fa-align-center'></i></button>
-    <button [id]="'justifyRight-'+id" type="button" title="Justify Right" class="angular-editor-button"
-            (click)="triggerCommand('justifyRight')" [disabled]="htmlMode" tabindex="-1">
+    <button [id]="'justifyLeft-'+id" type="button" title="Bandiera a sinistra" class="angular-editor-button"
+      (click)="triggerCommand('justifyLeft')" [disabled]="htmlMode" tabindex="-1"><i
+        class='fa fa-align-left'></i></button>
+    <button [id]="'justifyCenter-'+id" type="button" title="Centrato" class="angular-editor-button"
+      (click)="triggerCommand('justifyCenter')" [disabled]="htmlMode" tabindex="-1"><i
+        class='fa fa-align-center'></i></button>
+    <button [id]="'justifyRight-'+id" type="button" title="Bandiera a destra" class="angular-editor-button"
+      (click)="triggerCommand('justifyRight')" [disabled]="htmlMode" tabindex="-1">
       <i class='fa fa-align-right'></i></button>
-    <button [id]="'justifyFull-'+id" type="button" title="Justify Full" class="angular-editor-button"
-            (click)="triggerCommand('justifyFull')" [disabled]="htmlMode" tabindex="-1"><i
-      class='fa fa-align-justify'></i></button>
+    <button [id]="'justifyFull-'+id" type="button" title="Giustificato" class="angular-editor-button"
+      (click)="triggerCommand('justifyFull')" [disabled]="htmlMode" tabindex="-1"><i
+        class='fa fa-align-justify'></i></button>
   </div>
   <div class="angular-editor-toolbar-set">
-    <button [id]="'indent-'+id" type="button" title="Indent" class="angular-editor-button"
-            (click)="triggerCommand('indent')"
-            [disabled]="htmlMode" tabindex="-1"><i
-      class='fa fa-indent'></i></button>
-    <button [id]="'outdent-'+id" type="button" title="Outdent" class="angular-editor-button"
-            (click)="triggerCommand('outdent')"
-            [disabled]="htmlMode" tabindex="-1"><i
-      class='fa fa-outdent'></i></button>
+    <button [id]="'indent-'+id" type="button" title="Aumenta rientro" class="angular-editor-button"
+      (click)="triggerCommand('indent')" [disabled]="htmlMode" tabindex="-1"><i class='fa fa-indent'></i></button>
+    <button [id]="'outdent-'+id" type="button" title="Diminuisci rientro" class="angular-editor-button"
+      (click)="triggerCommand('outdent')" [disabled]="htmlMode" tabindex="-1"><i class='fa fa-outdent'></i></button>
   </div>
   <div class="angular-editor-toolbar-set">
-    <button [id]="'insertUnorderedList-'+id" type="button" title="Unordered List" class="angular-editor-button"
-            (click)="triggerCommand('insertUnorderedList')" [disabled]="htmlMode" tabindex="-1"><i class='fa fa-list-ul'></i></button>
-    <button [id]="'insertOrderedList-'+id" type="button" title="Ordered List" class="angular-editor-button"
-            (click)="triggerCommand('insertOrderedList')" [disabled]="htmlMode" tabindex="-1"><i class='fa fa-list-ol'></i></button>
+    <button [id]="'insertUnorderedList-'+id" type="button" title="Elenco puntato" class="angular-editor-button"
+      (click)="triggerCommand('insertUnorderedList')" [disabled]="htmlMode" tabindex="-1"><i
+        class='fa fa-list-ul'></i></button>
+    <button [id]="'insertOrderedList-'+id" type="button" title="Elenco numerato" class="angular-editor-button"
+      (click)="triggerCommand('insertOrderedList')" [disabled]="htmlMode" tabindex="-1"><i
+        class='fa fa-list-ol'></i></button>
   </div>
   <div class="angular-editor-toolbar-set">
     <label [for]="'heading-'+id" class="block-label" tabindex="-1"></label>
-    <select title="Formatting" [id]="'heading-'+id" class="select-heading" [(ngModel)]="block"
-            (change)="triggerCommand(block)"
-            [disabled]="htmlMode"  tabindex="-1">
+    <select title="Stile" [id]="'heading-'+id" class="select-heading" [(ngModel)]="block"
+      (change)="triggerCommand(block)" [disabled]="htmlMode" tabindex="-1">
       <optgroup label="Formatting"></optgroup>
       <option class="h1" value="h1">Heading 1</option>
       <option class="h2" value="h2">Heading 2</option>
@@ -63,19 +61,17 @@
   </div>
   <div class="angular-editor-toolbar-set">
     <label [for]="'fontSelector-'+id" class="block-label"></label>
-    <select title="Font Name" [id]="'fontSelector-'+id" class="select-font" [(ngModel)]="fontId"
-            (change)="setFontName(fontId)"
-            [disabled]="htmlMode" tabindex="-1">
-      <optgroup label="Font Name"></optgroup>
+    <select title="Font" [id]="'fontSelector-'+id" class="select-font" [(ngModel)]="fontId"
+      (change)="setFontName(fontId)" [disabled]="htmlMode" tabindex="-1">
+      <optgroup label="Nome del font"></optgroup>
       <option *ngFor="let item of fonts; let i = index" [class]="item.class" [value]="i">{{item.name}}</option>
     </select>
   </div>
   <div class="angular-editor-toolbar-set">
     <label [for]="'fontSizeSelector-'+id" class="block-label"></label>
-    <select title="Font Size" [id]="'fontSizeSelector-'+id" class="select-font-size" [(ngModel)]="fontSize"
-            (change)="setFontSize(fontSize)"
-            [disabled]="htmlMode" tabindex="-1">
-      <optgroup label="Font Sizing"></optgroup>
+    <select title="Dimensiont" [id]="'fontSizeSelector-'+id" class="select-font-size" [(ngModel)]="fontSize"
+      (change)="setFontSize(fontSize)" [disabled]="htmlMode" tabindex="-1">
+      <optgroup label="Dimensione carattere"></optgroup>
       <option class="size1" value="1">1</option>
       <option class="size2" value="2">2</option>
       <option class="size3" value="3">3</option>
@@ -86,13 +82,23 @@
     </select>
   </div>
   <div class="angular-editor-toolbar-set">
-    <button [id]="'link-'+id" type="button" class="angular-editor-button" (click)="insertUrl()"
-            title="Insert Link" [disabled]="htmlMode" tabindex="-1">
+    <button [id]="'link-'+id" type="button" class="angular-editor-button" (click)="insertUrl()" title="Inserisci link"
+      [disabled]="htmlMode" tabindex="-1">
       <i class="fa fa-link"></i>
     </button>
-    <button type="button" class="angular-editor-button" (click)="triggerCommand('unlink')"
-            title="Unlink" [disabled]="htmlMode" tabindex="-1">
+    <button type="button" class="angular-editor-button" (click)="triggerCommand('unlink')" title="Elimina link"
+      [disabled]="htmlMode" tabindex="-1">
       <i class="fa fa-unlink"></i>
+    </button>
+  </div>
+  <div class="angular-editor-toolbar-set">
+    <button [id]="'save-'+id" type="button" class="angular-editor-button" title="Salva"
+      [disabled]="htmlMode" tabindex="-1">
+      <i class="fa fa-save"></i>
+    </button>
+    <button type="button" class="angular-editor-button" title="Nota"
+      [disabled]="htmlMode" tabindex="-1">
+      <i class="fa fa-sticky-note"></i>
     </button>
   </div>
 </div>
