@@ -96,7 +96,7 @@
       [disabled]="htmlMode" tabindex="-1">
       <i class="fa fa-save"></i>
     </button>
-    <button [id]="'footnote-'+id" type="button" class="angular-editor-button" title="Nota"
+    <button [id]="'footnote-'+id" type="button" class="angular-editor-button" title="Nota" (click)="createFootnote()"
       [disabled]="htmlMode" tabindex="-1">
       <i class="fa fa-sticky-note"></i>
     </button>

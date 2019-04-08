@@ -2,7 +2,7 @@ import {Component, ElementRef, EventEmitter, Inject, Output, Renderer2, ViewChil
 import {AngularEditorService} from './angular-editor.service';
 import {HttpResponse} from '@angular/common/http';
 import {DOCUMENT} from '@angular/common';
-import {CustomClass, Font} from './config';
+import {CustomClass, Font, CREATE_FOOTNOTE} from './config';
 
 @Component({
   selector: 'angular-editor-toolbar',
@@ -212,5 +212,9 @@ export class AngularEditorToolbarComponent {
    */
   setCustomClass(classId: number) {
     this.editorService.createCustomClass(this.customClasses[classId]);
+  }
+
+  public createFootnote() {
+    this.execute.emit(CREATE_FOOTNOTE);
   }
 }

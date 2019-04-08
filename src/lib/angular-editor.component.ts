@@ -10,11 +10,11 @@ import {
   Renderer2,
   ViewChild
 } from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
-import {AngularEditorConfig, angularEditorConfig} from "./config";
-import {AngularEditorToolbarComponent} from "./angular-editor-toolbar.component";
-import {AngularEditorService} from "./angular-editor.service";
-import {DOCUMENT} from "@angular/common";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { AngularEditorConfig, angularEditorConfig, CREATE_FOOTNOTE } from "./config";
+import { AngularEditorToolbarComponent } from "./angular-editor-toolbar.component";
+import { AngularEditorService } from "./angular-editor.service";
+import { DOCUMENT } from "@angular/common";
 
 @Component({
   selector: 'angular-editor',
@@ -53,6 +53,8 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
 
   /** emits `focus` event when focused in to the textarea */
   @Output() focus: EventEmitter<string> = new EventEmitter<string>();
+
+  @Output() onFootnote: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private _renderer: Renderer2, private editorService: AngularEditorService, @Inject(DOCUMENT) private _document: any) {
   }
@@ -97,8 +99,12 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
     if (command === 'toggleEditorMode') {
       this.toggleEditorMode(this.modeVisual);
     } else if (command !== '') {
-      this.editorService.executeCommand(command);
-      this.exec();
+      if (command === CREATE_FOOTNOTE) {
+        this.onFootnote.emit(CREATE_FOOTNOTE);
+      } else {
+        this.editorService.executeCommand(command);
+        this.exec();
+      }
     }
 
     this.onEditorFocus();

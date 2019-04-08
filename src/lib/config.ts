@@ -50,3 +50,5 @@ export const angularEditorConfig: AngularEditorConfig = {
   ],
   uploadUrl: 'v1/image',
 };
+
+export const CREATE_FOOTNOTE = 'create footnote';
