@@ -92,7 +92,7 @@
     </button>
   </div>
   <div class="angular-editor-toolbar-set">
-    <button [id]="'save-'+id" type="button" class="angular-editor-button" title="Salva"
+    <button [id]="'save-'+id" type="button" class="angular-editor-button" title="Salva" (click)="saveAction()"
       [disabled]="htmlMode" tabindex="-1">
       <i class="fa fa-save"></i>
     </button>
