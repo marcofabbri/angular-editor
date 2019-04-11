@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common';
 import {
   AfterContentInit,
   Component,
@@ -8,13 +9,13 @@ import {
   OnInit,
   Output,
   Renderer2,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
-import { AngularEditorConfig, angularEditorConfig, CREATE_FOOTNOTE } from "./config";
-import { AngularEditorToolbarComponent } from "./angular-editor-toolbar.component";
-import { AngularEditorService } from "./angular-editor.service";
-import { DOCUMENT } from "@angular/common";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+
+import { AngularEditorToolbarComponent } from './angular-editor-toolbar.component';
+import { AngularEditorService } from './angular-editor.service';
+import { AngularEditorConfig, angularEditorConfig, CREATE_FOOTNOTE, SAVE_ACTION } from './config';
 
 @Component({
   selector: 'angular-editor',
@@ -55,6 +56,8 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
   @Output() focus: EventEmitter<string> = new EventEmitter<string>();
 
   @Output() onFootnote: EventEmitter<string> = new EventEmitter<string>();
+
+  @Output() onSave: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private _renderer: Renderer2, private editorService: AngularEditorService, @Inject(DOCUMENT) private _document: any) {
   }
@@ -101,6 +104,8 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
     } else if (command !== '') {
       if (command === CREATE_FOOTNOTE) {
         this.onFootnote.emit(CREATE_FOOTNOTE);
+      } else if (command === SAVE_ACTION) {
+        this.onSave.emit(SAVE_ACTION);
       } else {
         this.editorService.executeCommand(command);
         this.exec();

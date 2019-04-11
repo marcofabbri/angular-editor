@@ -1,8 +1,9 @@
-import {Component, ElementRef, EventEmitter, Inject, Output, Renderer2, ViewChild} from '@angular/core';
-import {AngularEditorService} from './angular-editor.service';
-import {HttpResponse} from '@angular/common/http';
-import {DOCUMENT} from '@angular/common';
-import {CustomClass, Font, CREATE_FOOTNOTE} from './config';
+import { DOCUMENT } from '@angular/common';
+import { HttpResponse } from '@angular/common/http';
+import { Component, ElementRef, EventEmitter, Inject, Output, Renderer2, ViewChild } from '@angular/core';
+
+import { AngularEditorService } from './angular-editor.service';
+import { CREATE_FOOTNOTE, CustomClass, Font, SAVE_ACTION } from './config';
 
 @Component({
   selector: 'angular-editor-toolbar',
@@ -214,7 +215,11 @@ export class AngularEditorToolbarComponent {
     this.editorService.createCustomClass(this.customClasses[classId]);
   }
 
-  public createFootnote() {
+  public createFootnote(): void {
     this.execute.emit(CREATE_FOOTNOTE);
+  }
+
+  public saveAction(): void {
+    this.execute.emit(SAVE_ACTION);
   }
 }

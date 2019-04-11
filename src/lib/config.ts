@@ -23,7 +23,7 @@ export interface AngularEditorConfig {
   placeholder?: string;
   defaultParagraphSeparator?: string;
   defaultFontName?: string;
-  defaultFontSize?: '1' | '2' | '3' | '4' | '5' | '6' | '7' |string;
+  defaultFontSize?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | string;
   uploadUrl?: string;
   fonts?: Font[];
   customClasses?: CustomClass[];
@@ -45,10 +45,11 @@ export const angularEditorConfig: AngularEditorConfig = {
   defaultFontName: '',
   defaultFontSize: '',
   fonts: [
-    {class: 'arial', name: 'Arial'},
-    {class: 'times-new-roman', name: 'Times New Roman'},
+    { class: 'arial', name: 'Arial' },
+    { class: 'times-new-roman', name: 'Times New Roman' },
   ],
   uploadUrl: 'v1/image',
 };
 
 export const CREATE_FOOTNOTE = 'create footnote';
+export const SAVE_ACTION = 'save action';
