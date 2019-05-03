@@ -103,7 +103,7 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
       this.toggleEditorMode(this.modeVisual);
     } else if (command !== '') {
       if (command === CREATE_FOOTNOTE) {
-        this.onFootnote.emit(CREATE_FOOTNOTE);
+        this.onFootnote.emit(this.getSelectedText());
       } else if (command === SAVE_ACTION) {
         this.onSave.emit(SAVE_ACTION);
       } else {
@@ -306,4 +306,10 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
     this.editorToolbar.triggerBlocks(els);
   }
 
+  private getSelectedText(): string {
+    if (window.getSelection) {
+      return window.getSelection().toString();
+    }
+    return '';
+  }
 }
