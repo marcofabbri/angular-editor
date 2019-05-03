@@ -55,7 +55,7 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
   /** emits `focus` event when focused in to the textarea */
   @Output() focus: EventEmitter<string> = new EventEmitter<string>();
 
-  @Output() onFootnote: EventEmitter<string> = new EventEmitter<string>();
+  @Output() onFootnote: EventEmitter<Selection> = new EventEmitter<Selection>();
 
   @Output() onSave: EventEmitter<string> = new EventEmitter<string>();
 
