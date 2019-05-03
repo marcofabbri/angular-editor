@@ -306,10 +306,10 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
     this.editorToolbar.triggerBlocks(els);
   }
 
-  private getSelectedText(): string {
+  private getSelectedText(): Selection {
     if (window.getSelection) {
-      return window.getSelection().toString();
+      return window.getSelection();
     }
-    return '';
+    return null;
   }
 }
