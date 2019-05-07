@@ -104,7 +104,7 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
       this.toggleEditorMode(this.modeVisual);
     } else if (command !== '') {
       if (command === CREATE_FOOTNOTE) {
-        
+        this.editorService.createFootnote(this.nextNote);
         this.onFootnote.emit(this.getSelectedText());
       } else if (command === SAVE_ACTION) {
         this.onSave.emit(SAVE_ACTION);
