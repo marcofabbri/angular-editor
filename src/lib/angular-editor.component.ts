@@ -41,7 +41,7 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
   @Input() id = '';
   @Input() config: AngularEditorConfig = angularEditorConfig;
 
-  @Input() nextNote: string;
+  @Input() notePlaceholder: string;
   @Output() html;
 
   @ViewChild('editor') textArea: any;
@@ -104,7 +104,7 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
       this.toggleEditorMode(this.modeVisual);
     } else if (command !== '') {
       if (command === CREATE_FOOTNOTE) {
-        this.editorService.createFootnote(this.nextNote);
+        this.editorService.createFootnote(this.notePlaceholder);
         this.onFootnote.emit(this.getSelectedText());
       } else if (command === SAVE_ACTION) {
         this.onSave.emit(SAVE_ACTION);
