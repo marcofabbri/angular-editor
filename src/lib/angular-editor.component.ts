@@ -132,7 +132,6 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
      * save selection if focussed out
      */
     this.editorService.saveSelection();
-    console.log('Blur');
     if (typeof this.onTouched === 'function') {
       this.onTouched();
     }
@@ -166,9 +165,9 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
   public onPaste(event: ClipboardEvent) {
     event.preventDefault();
     event.stopPropagation();
-    let clipboardData = event.clipboardData;
-    let pastedText = clipboardData.getData('text');
-    console.log(pastedText);
+    const clipboardData = event.clipboardData;
+    const textToPaste = clipboardData.getData('text');
+    this.editorService.pasteText(textToPaste);
   }
 
   /**

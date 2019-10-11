@@ -51,6 +51,11 @@ export class AngularEditorService {
     this.insertHtml(footnote);
   }
 
+
+  public pasteText(text: string) {
+    this.insertHtml(text);
+  }
+
   /**
    * insert color either font or background
    *
