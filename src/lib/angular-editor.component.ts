@@ -164,6 +164,7 @@ export class AngularEditorComponent implements OnInit, ControlValueAccessor, Aft
   }
 
   public onPaste(event: ClipboardEvent) {
+    event.preventDefault();
     let clipboardData = event.clipboardData;
     let pastedText = clipboardData.getData('text');
     console.log(pastedText);
