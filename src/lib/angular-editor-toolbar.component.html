@@ -1,7 +1,7 @@
 <div class="angular-editor-toolbar" *ngIf="showToolbar">
   <div class="angular-editor-toolbar-set">
     <button type="button" alt="Annulla" class="angular-editor-button" (click)="triggerCommand('undo')" tabindex="-1"
-      tooltip="Annulla" container="body" containerClass="angular-editor-toolbar-tooltip"><i
+      tooltip="Annulla" container="body" containerClass="angular-editor-toolbar-tooltip" placement="bottom"><i
         class='fa fa-undo'></i></button>
     <button type="button" alt="Ripeti" class="angular-editor-button" (click)="triggerCommand('redo')" tabindex="-1"
       tooltip="Ripeti" container="body" containerClass="angular-editor-toolbar-tooltip"><i
@@ -36,7 +36,7 @@
   <div class="angular-editor-toolbar-set">
     <button [id]="'indent-'+id" type="button" alt="Aumenta rientro" class="angular-editor-button"
       (click)="triggerCommand('indent')" [disabled]="htmlMode" tabindex="-1" tooltip="Aumenta rientro" container="body"
-      containerClass="angular-editor-toolbar-tooltip" triggers="mouseenter:click" adaptivePosition="false"><i class='fa fa-indent'></i></button>
+      containerClass="angular-editor-toolbar-tooltip" triggers="mouseenter:click"><i class='fa fa-indent'></i></button>
     <button [id]="'outdent-'+id" type="button" alt="Diminuisci rientro" class="angular-editor-button"
       (click)="triggerCommand('outdent')" [disabled]="htmlMode" tabindex="-1" tooltip="Diminuisci rientro"
       container="body" containerClass="angular-editor-toolbar-tooltip"><i class='fa fa-outdent'></i></button>
