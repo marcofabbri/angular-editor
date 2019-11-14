@@ -109,10 +109,11 @@
       containerClass="angular-editor-toolbar-tooltip">
       <i class="fa fa-save"></i>
     </button>
-    <button [id]="'footnote-'+id" type="button" class="angular-editor-button" alt="Nota" (click)="createFootnote()"
-      [disabled]="htmlMode" tabindex="-1" tooltip="Nota" container="body"
-      containerClass="angular-editor-toolbar-tooltip">
-      <i class="fa fa-sticky-note"></i>
-    </button>
+    <div style="display: inline;" tooltip="Nota" container="body" containerClass="angular-editor-toolbar-tooltip">
+      <button [id]="'footnote-'+id" type="button" class="angular-editor-button" alt="Nota" (click)="createFootnote()"
+        [disabled]="htmlMode" tabindex="-1">
+        <i class="fa fa-sticky-note"></i>
+      </button>
+    </div>
   </div>
 </div>
