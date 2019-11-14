@@ -36,7 +36,7 @@
   <div class="angular-editor-toolbar-set">
     <button [id]="'indent-'+id" type="button" alt="Aumenta rientro" class="angular-editor-button"
       (click)="triggerCommand('indent')" [disabled]="htmlMode" tabindex="-1" tooltip="Aumenta rientro" container="body"
-      containerClass="angular-editor-toolbar-tooltip" triggers="mouseenter:click"><i class='fa fa-indent'></i></button>
+      containerClass="angular-editor-toolbar-tooltip" triggers="mouseenter:click" adaptivePosition="false"><i class='fa fa-indent'></i></button>
     <button [id]="'outdent-'+id" type="button" alt="Diminuisci rientro" class="angular-editor-button"
       (click)="triggerCommand('outdent')" [disabled]="htmlMode" tabindex="-1" tooltip="Diminuisci rientro"
       container="body" containerClass="angular-editor-toolbar-tooltip"><i class='fa fa-outdent'></i></button>
