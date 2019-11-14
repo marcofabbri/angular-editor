@@ -1,7 +1,7 @@
 <div class="angular-editor-toolbar" *ngIf="showToolbar">
   <div class="angular-editor-toolbar-set">
-    <div style="display: inline;" tooltip="Annulla" container="body" placement="top"><button type="button" alt="Annulla" class="angular-editor-button"
-        (click)="triggerCommand('undo')" tabindex="-1"><i class='fa fa-undo'></i></button></div>
+    <button type="button" alt="Annulla" class="angular-editor-button"
+        (click)="triggerCommand('undo')" tabindex="-1" triggers="focus" triggers="focus"><i class='fa fa-undo'></i></button>
     <button type="button" alt="Ripeti" class="angular-editor-button" (click)="triggerCommand('redo')" tabindex="-1"><i
         class='fa fa-redo'></i></button>
   </div>
